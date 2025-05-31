@@ -1,4 +1,4 @@
-** Creador por
-* Sebastian Delgado Ospina
+# Creador por
+* Sebastián Delgado Ospina
 * Santiago Escobar Montaño
-* Miguel Angel Velez Martinez
+* Miguel Ángel Vélez Martínez
