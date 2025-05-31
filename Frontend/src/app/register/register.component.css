@@ -1,0 +1,128 @@
+.row{
+    max-width: 750px;
+    margin: 4rem auto;
+    background: rgba(255,255,255,0.05);
+    padding: 2.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 20px #00ffff33;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: pulseBorder 4s infinite alternate;
+}
+
+@keyframes pulseBorder {
+    0%{
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+    100%{
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #bffcff;
+    margin: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline:none;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+.btn-register {
+    background: transparent;
+    color: #04c4ca;
+    border: 2px solid #0c2627;
+    font-weight: bold;
+    padding: 0.8rem 0.8rem;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    margin-right: 1rem;
+}
+
+.btn-register:hover {
+    background: #007175;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn-back {
+    background: transparent;
+    color: #04c4ca;
+    border: 2px solid #0c2627;
+    font-weight: bold;
+    padding: 0.8rem 0.8rem;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+}
+
+.btn-back:hover {
+    background: #007175;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+
+.text-center p {
+    color: #e03131;
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .register_container {
+        max-width: 95%;
+        padding: 1.5rem 1.5rem;
+    }
+
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        margin-bottom: 1rem;
+    }
+
+    button.btn-register,
+    button.btn-back {
+        width: 100%;
+        margin: 0.4rem 0;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}

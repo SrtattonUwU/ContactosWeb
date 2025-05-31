@@ -1,0 +1,50 @@
+<div class="crear-contacto">
+    <h2>Crear nuevo contacto</h2>
+    <form>
+        <input type="text" placeholder="Nombre" [(ngModel)]="contacto.nombre" name="nombre" required>
+        <input type="text" placeholder="Apellido" [(ngModel)]="contacto.apellido" name="apellido" required>
+        <input type="tel" placeholder="Telefono fijo" [(ngModel)]="contacto.telefonoFijo" name="telefonoFijo" required>
+        <input type="tel" placeholder="Celular" [(ngModel)]="contacto.celular" name="celular" required>
+        <input type="email" placeholder="Correo" [(ngModel)]="contacto.email" name="email" required>
+    <button (click)="crearContacto()">Agregar</button>
+    </form>
+</div>
+
+<div class="listar-contactos">
+    <h2>Tus contactos</h2>
+    <div class="contactos-grid">
+        <div *ngFor="let contacto of contactos; let i = index">
+            <p>
+                <span><strong>{{ contacto.name }} {{ contacto.lastName }} </strong></span>
+                <span>Fijo: {{ contacto.landline }} </span>
+                <span>Celular: {{ contacto.celular }} </span>
+                <span>Email: {{ contacto.email }}</span>
+                <button (click)="popupModificarContacto(contacto, i)">Modificar</button>
+                <button (click)="popupEliminarContacto(i)">Eliminar</button>
+            </p>
+        </div>
+    </div>
+</div> 
+
+<div class="modal-popup" *ngIf="editPopupVisible">
+    <button class="close-popup" (click)="closepopup()">x</button>
+    <h3>Modificar contacto</h3>
+    <form>
+        <input type="text" placeholder="Nombre" [(ngModel)]="editarContacto.name" name="nombre" required>
+        <input type="text" placeholder="Apellido" [(ngModel)]="editarContacto.lastName" name="apellido" required>
+        <input type="tel" placeholder="Telefono fijo" [(ngModel)]="editarContacto.landline" name="telefonoFijo" required>
+        <input type="tel" placeholder="Celular" [(ngModel)]="editarContacto.celular" name="celular" required>
+        <input type="email" placeholder="Correo" [(ngModel)]="editarContacto.email" name="email" required>
+    <button (click)="modificarContacto()">Modificar contacto</button>
+    </form>
+</div>
+
+<div class="delete-popup" *ngIf="deletePopupVisible">
+    <p>¿Está seguro de eliminar esta cita?</p>
+    <div class="popup-buttons">
+        <button class="confirm-delete-button" (click)="eliminarContacto()">Sí</button>
+        <button class="cancel-delete-button" (click)="cancelDeleteContact()">No</button>
+    </div>
+</div>
+
+<button class="log-out" (click)="logOut()">Cerrar sesión</button>
